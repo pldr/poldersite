@@ -1,0 +1,64 @@
+<h3>Homepage : Overzicht Leden</h3>
+<hr/>
+<div>
+  <button ng-click="clickGet()"    class="btn btn-lg btn-primary">Zoeken</button>
+  <a ui-sref="createPerson"        class="btn btn-lg btn-primary">Nieuw</a>
+  <button ng-click="clickCancel()" class="btn btn-lg btn-primary">Doe iets</button>
+  <button ng-click="delPerson()"   class="btn btn-lg btn-primary">Verwijder</button>
+  <br><br>
+<hr/>
+  <p>
+    Filter : <input type="text" size="10" height="28" ng-model="filter.id" class="input" placeholder="Nummer..."/>
+    <input type="text" size="10" ng-model="filter.name" class="input" placeholder="Voornaam..." />
+    <input type="text" size="10" ng-model="filter.lastname" class="input" placeholder="Naam..." />
+    <select ng-model="filter.soortlid" name="soortlid"
+            ng-options="item.SoortLid as item.Omschrijving for item in soortlid"
+            class="input">
+    <option value="">soortlid</option>
+    </select>
+    <select ng-model="filter.regio" name="regio"
+            ng-options="item.Regio as item.Omschrijving for item in regio"
+            class="input">
+      <option value="">regio</option>
+    </select>
+    <button class="btn btn-lg btn-primary" ng-click="clearFilter();">Clear</button>
+  </p>
+  <p>
+    Display:
+    <label><input type="checkbox" ng-model="display.id"/> Nummer</label>
+    <label><input type="checkbox" ng-model="display.name"/> Voornaam</label>
+    <label><input type="checkbox" ng-model="display.lastname"/> Naam</label>
+    <label><input type="checkbox" ng-model="display.soortlid"/> Soortlid</label>
+    <label><input type="checkbox" ng-model="display.regio"/> Regio</label>
+  </p>
+  <div class="person-grid">
+    <scrollable-table watch="persons" watch-cols="display">
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th><center><input type="checkbox" ng-change="checkAll(selectedAll);" ng-model="selectedAll" ng-true-value="true" ng-false-value="false" /></center></th>
+            <th ng-if="display.id"><a href="javascript:void(0);" ng-click="clickSort('id', !reverse)">Nummer</a></th>
+            <th ng-if="display.name"><a href="javascript:void(0);" ng-click="clickSort('name', !reverse)">Voornaam</a></th>
+            <th ng-if="display.lastname"><a href="javascript:void(0);" ng-click="clickSort('lastname', !reverse)">Naam</a></th>
+            <th ng-if="display.soortlid"><a href="javascript:void(0);" ng-click="clickSort('soortlid', !reverse)">Soortlid</a></th>
+            <th ng-if="display.regio"><a href="javascript:void(0);" ng-click="clickSort('regio', !reverse)">Regio</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="person in persons | orderBy: mySort : reverse | filter : {name: filter.name, lastname: filter.lastname, id: filter.id, soortlid: filter.soortlid?filter.soortlid:'', regio: filter.regio?filter.regio:'' } as numResults" ng-click="rowClicked(person)" >
+            <td style="width:100px"><center><input type="checkbox" ng-checked="person.selected"  ng-model="selectedObjs" ng-click="toggleObjSelection($event, person.id)"  value="{{person}}"  /></center></td>
+            <td ng-if="display.id">{{ person.id}}</td>
+            <td ng-if="display.name">{{ person.name}}</td>
+            <td ng-if="display.lastname">{{ person.lastname}}</td>
+            <td ng-if="display.soortlid"><p title="{{person.soortlid_full}}">{{ person.soortlid}}</p></td>
+            <td ng-if="display.regio"><p title="{{person.regio_full}}">{{ person.regio}}</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </scrollable-table>
+  </div>
+  <div ng-if="numResults.length === 0">
+    <strong>Geen resultaten gevonden...</strong>
+  </div>
+</div>
+<hr/>

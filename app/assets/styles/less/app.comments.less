@@ -1,0 +1,90 @@
+.comments-list {
+    textarea {
+        border: none;
+        padding: 15px;
+        width: 100%;
+    }
+    .btn:hover {
+    	background-color: @brand-primary;
+    	border-color: @brand-primary;
+    	color: #fff;
+    }
+
+    .btn-cancel{
+    	background-color: transparent;
+    	border-color: @border-color;
+    }
+    .btn-cancel:hover{
+    	background-color: transparent;
+    	color: @text-color;
+    	border-color: darken(@border-color, 15%);
+    }
+}
+
+.no-right-padding {
+    padding-right: 0px;
+}
+.comment.highlight {
+	.panel{
+		border: 1px solid @brand-danger;
+	}
+}
+.comment {
+    .panel {
+        margin-left: 50px;
+    }
+    .panel-body {
+    	word-wrap:break-word;
+        padding: 0px 15px 15px;
+        span {
+            white-space: pre;
+        }
+    }
+    .reply {
+        margin-left: 70px;
+    }
+    .reply-form {
+        margin-left: 120px;
+    }
+    .edit-form {
+        textarea {
+            border: 1px solid @border-color;
+            display: inline-block;
+            min-height: 10px;
+        }
+    }
+    .links > span:hover {
+        cursor: pointer;
+    }
+    .reported:hover {
+    	cursor: pointer;
+    }
+}
+
+.comment-box {
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    background-color: rgba(10, 10, 10, .50);
+    padding: 5px 15px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 5;
+}
+.comment-box:hover {
+	cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .comment {
+        .panel {
+            margin-left: 30px;
+        }
+        .reply {
+            margin-left: 50px;
+        }
+        .reply-form {
+            margin-left: 30px;
+        }
+    }
+}

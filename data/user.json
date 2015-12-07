@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "username": "admin",
+  "email": "admin@site.dev",
+  "password":"123456",
+  "token": "abc",
+  "bedrijf": "314"
+}

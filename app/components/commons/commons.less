@@ -1,0 +1,24 @@
+@import url('ceibo.functions.less');
+
+.app-container {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+}
+
+.page-wrap{
+    padding-left: 250px;
+    height: 100%;
+    .transition(all .4s ease 0s);
+    .opacity(1);
+
+    &.open{
+        padding-left: 70px;
+    }
+
+    &.hiddenPhone{
+        padding-left: 70px;
+        .opacity(.6);
+    }
+}

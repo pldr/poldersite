@@ -1,0 +1,23 @@
+<h3>Details SoortLid</h3>
+<hr/>
+<form ng-submit="clickSave(form)" name="form" novalidate>
+  <a ui-sref="adminLidsoorten" class="btn btn-lg btn-success">Terug </a>
+  <div class='pull-right mb10'>
+    <button type="button" ng-click="clickPre()"  class="btn btn-lg btn-success">Vorig</button>
+    <button type="button" ng-click="clickNext()" class="btn btn-lg btn-success">Volgende</button>
+  </div>
+  <hr/>
+  <div class="clearfix"></div>
+  <div class="jumbotron">
+    <table class="table table-bordered"> <!--" table-striped table-hover" -->
+      <tr><td> Soort Lid </td><td><input type="text"  readonly ng-model="soortl.SoortLid"     name="soortlid"     class="form-control input" placeholder="SoortLid"     required/><p class="help-block" ng-show="form.soortlid.$error.required && submitted">This input is required</p></td></tr>
+      <tr><td>Omschrijving</td><td><input type="text"          ng-model="soortl.Omschrijving" name="omschrijving" class="form-control input" placeholder="Omschrijving" required/><p class="help-block" ng-show="form.omschrijving.$error.required && submitted">This input is required</p></td></tr>
+    </table>
+  </div>
+  <hr/>
+  <!-- <a href="#/home" class="btn btn-lg btn-success">Home</a> -->
+  <button type="submit"                          class="btn btn-lg btn-primary"> Opslaan </button>
+  <button type="button" ng-click="clickCancel()" class="btn btn-lg btn-primary">Annuleer</button>
+  <button type="button" ng-click="clickDel()"    class="btn btn-lg btn-success">Verwijder</button>
+  <hr/>
+</form>

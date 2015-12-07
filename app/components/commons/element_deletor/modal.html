@@ -1,0 +1,17 @@
+<div class="modal-body">
+    <div ng-show="ctrl.isArray">
+        <p>De volgende regels verwijderen ? </p>
+        <ul>
+            <li ng-repeat="item in ctrl.items track by $index">
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+    <p ng-show="!ctrl.isArray">
+       Regel "{{ ctrl.items}}" verwijderen ?
+    </p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="ctrl.cancel()">Annuleer</button>
+</div>

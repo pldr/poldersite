@@ -1,0 +1,104 @@
+<!--                                     -->
+<!-- Overzicht SoortLid                    -->
+<!-- 20150816 onnodige div verwijderd    -->
+<!--                                     -->
+<h3><b>Overzicht SoortLid</b></h3>
+<hr/>
+ <div>
+  <div class="row">
+         <div class="col-md-12">
+             <a ui-sref="home.init"              class="btn btn-lg btn-back">Terug</a>
+             <!-- <button ng-click="clickGet()"  class="btn btn-lg btn-primary">Zoeken</button> -->
+             <a ui-sref="soortlid.create"      class="btn btn-lg btn-new">Nieuw</a>
+             <!-- <button ng-click="clickCancel()" class="btn btn-lg btn-primary">Doe iets</button> -->
+             <!-- <button ng-click="delSoortLid()" class="btn btn-lg btn-primary">Verwijder</button> -->
+             <div class="row pull-right">
+                 <div class="dropdown">
+                     <button class="btn btn-lg btn-export dropdown-toggle" margin-right=46px type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                         <i class=""></i>Export
+                         <span class="caret"></span>
+                     </button>
+                     <ul class="table-export dropdown-menu" table-selector="'auxTable'" export-options="{type: 'pdf', escape: true, ignoreColumn : '[4]', tableName: 'SoortLids' }" aria-labelledby="dropdownMenu1">
+                         <li te-option te-value="'pdf'" te-param="'type'">
+                             <a href="">PDF</a>
+                         </li>
+
+                         <li te-option te-value="'excel'" te-param="'type'">
+                             <a href="">Excel</a>
+                         </li>
+
+                         <li te-option te-value="'csv'" te-param="'type'">
+                             <a href="">CSV</a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+         <div class="col-md-12">
+             <!--<select name="exportbutton" id="" class="table-export" table-selector="'table'" export-options="{'escape': false}">
+                 <option te-option te-value="'pdf'" te-param="'type'">PDF</option>
+                 <option te-option te-value="'xls'" te-param="'type'">XLS</option>
+             </select>-->
+
+<!-- 			 <table st-table="ctrl.model.soortlids" class="table table-striped"> -->
+			<hr/>
+			 <table st-table="ctrl.model.soortlids" st-filtered-collection="filteredCollection" class="table table-striped">
+                 <thead>
+                     <tr>
+                         <th st-sort="SoortLid">SoortLid</th>
+                         <th st-sort="Omschrijving">Omschrijving</th>
+                         <th class="col-md-1"></th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr ng-repeat="row in ctrl.model.soortlids">
+                         <td>{{row.SoortLid}}</td>
+                         <td>{{row.Omschrijving}}</td>
+                         <td>
+<!--                         <a class="btn btn-sm btn-primary" ui-sref="soortlid.view({soortlidId: row.SoortLid})"><i class="fa fa-pencil"></i></a> -->
+                             <a class="btn btn-sm btn-edit" ui-sref="soortlid.view({soortlidId: row.SoortLid})"><i class="fa fa-pencil"></i></a>
+                             <button type="button" element-deletion
+                                     collection="ctrl.model.soortlids"
+                                     options="{liveUpdate: true,
+                                        compareBy : 'SoortLid',
+                                        usePromise: true,
+                                        askBeforeDelete: true}"
+                                     ng-model="row.SoortLid"
+                                     deletion-service="ctrl.soortlidService.delSoortLid"
+                                     class="btn btn-sm btn-delete
+                                     ">
+                                 <i class="fa fa-trash-o"></i>
+                             </button>
+                         </td>
+                     </tr>
+                 </tbody>
+				<tfoot>
+				<tr>
+					<td colspan="5" class="text-center">
+						<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="10"></div>
+					</td>
+				</tr>
+				</tfoot>
+             </table>
+
+             <table id="auxTable" style="opacity: 0; position: absolute;">
+                <thead>
+                    <tr>
+                        <th>SoortLid</th>
+                        <th>Omschrijving</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in filteredCollection">
+                         <td>{{x.SoortLid}}</td>
+                         <td>{{x.Omschrijving}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+         </div>
+     </div>
+<!--  <div ng-if="numResults.length === 0">
+    <strong>Geen resultaten gevonden...</strong>
+  </div>-->
+</div>

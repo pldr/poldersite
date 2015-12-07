@@ -1,0 +1,72 @@
+<div>
+  <div class="jumbotron">
+    <h1>Nieuwe persoon toevoegen</h1>
+    <form ng-submit="addPerson(form)" name="form" novalidate>
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="form-group" ng-class="{'has-error':form.name.$invalid && submitted}">
+            <input type="text" ng-model="person.name" name="name"
+                   class="form-control input"
+                   placeholder="voornaam" required/>
+            <p class="help-block" ng-show="form.name.$error.required && submitted">
+              This input is required
+            </p>
+          </div>
+          <div class="form-group" ng-class="{'has-error':form.lastname.$invalid && submitted}">
+            <input type="text" ng-model="person.lastname" name="lastname"
+                   class="form-control input" placeholder="achternaam" required/>
+            <p class="help-block" ng-show="form.lastname.$error.required && submitted">
+              This input is required
+            </p>
+          </div>
+          <div class="form-group" ng-class="{'has-error':form.age.$invalid && submitted}">
+            <input type="number" ng-model="person.age" name="age"
+                   class="form-control input" min="18"
+                   placeholder="leeftijd" required/>
+            <p class="help-block" ng-show="form.age.$error.required && submitted">
+              This input is required
+            </p>
+            <p class="help-block" ng-show="form.age.$error.min && submitted">
+              Age must be 18+
+            </p>
+          </div>
+          <div class="form-group" ng-class="{'has-error':form.email.$invalid && submitted}">
+            <input type="text" ng-model="person.email" name="email"
+                   class="form-control input"
+                   ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"
+                   placeholder="e-mailadres" required/>
+            <p class="help-block" ng-show="form.email.$error.required && submitted">
+              This input is required
+            </p>
+            <p class="help-block" ng-show="form.email.$error.pattern && submitted">
+              Email-adress is not valid
+            </p>
+          </div>
+          <div class="form-group" ng-class="{'has-error':form.soortlid.$invalid && submitted}">
+            <select ng-model="person.soortlid" name="soortlid"
+                    ng-options="item.SoortLid as item.Omschrijving for item in soortlid"
+                    class="form-control input" required>
+              <option value="">soortlid</option>
+            </select>
+            <p class="help-block" ng-show="form.soortlid.$error.required && submitted">
+              Please select an item
+            </p>
+          </div>
+          <div class="form-group" ng-class="{'has-error':form.regio.$invalid && submitted}">
+            <select ng-model="person.regio" name="regio"
+                    ng-options="item.Regio as item.Omschrijving for item in regio"
+                    class="form-control input" required>
+              <option value="">regio</option>
+            </select>
+            <p class="help-block" ng-show="form.regio.$error.required && submitted">
+              Please select an item
+            </p>
+          </div>
+          <button class="btn btn-lg btn-primary" type="submit">Toevoegen</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr/>
+  <a ui-sref="home" class="btn btn-lg btn-warning">Annuleren</a>
+</div>

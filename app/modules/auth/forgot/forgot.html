@@ -1,0 +1,74 @@
+<div class="top-content">
+
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+                    <h1><strong>Poldersoft</strong> password recovery</h1>
+                    <div class="description">
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-form name="forgotPassForm" ng-submit="ctrl.submit(ctrl.model)">
+                <div class="col-sm-6 col-sm-offset-3 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Reset your password</h3>
+                            <p>Enter your username or email.</p>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-user-secret "></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" action="" method="post" class="login-form">
+                            <div flash-alert
+                                 ng-show="flash.type"
+                                 active-class="in"
+                                 class="alert form-group col-md-offset-3 col-md-6 fade"
+                                 ng-class="{'alert-success' : flash.type == 'success', 'alert-danger': flash.type == 'error'}" duration="0">
+                                <span class="alert-message">{{flash.message}}</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="form-username">Username or Email</label>
+                                <input type="text" name="form-username" placeholder="Username or Email..." ng-model="ctrl.model.username"
+                                       ng-model-options="{updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }"
+                                       class="form-username form-control"
+                                       ng-change="ctrl.checkUserName(ctrl.model.username)"
+                                       id="form-username" required>
+
+                                <p ng-show="ctrl.suggestions.register">Would you like to <a ui-sref="auth.register({username : ctrl.model.username })">Register</a>?</p>
+                            </div>
+
+                            <button type="submit" ng-disabled="forgotPassForm.$invalid" class="btn">Recover!</button>
+                            <br/>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 social-login">
+                        <h3>...or </h3>
+
+                        <div class="social-login-buttons">
+                            <a class="btn btn-link-1 btn-link-1-google-plus" ui-sref="auth.login">
+                                Login
+                            </a>
+                        </div>
+
+                        <div class="social-login-buttons">
+                            <a class="btn btn-link-1 btn-link-1-facebook" ui-sref="auth.register">
+                                Sign up
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

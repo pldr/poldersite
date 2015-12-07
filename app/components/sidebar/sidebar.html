@@ -1,0 +1,101 @@
+<nav role="navigation" id="sidebar-wrapper" ng-class="{'open' : ctrl.rootScope.toggle}">
+    <ul class="menu">
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
+            <div  id="accordion">
+                <li class="sidebar-main">
+                    <a ng-click="ctrl.toggleSidebar()">
+                        PolderSoft web
+                        <i class="menu-icon glyphicon glyphicon-transfer"></i>
+                    </a>
+                </li>
+
+                <li data-title="Dashboard" data-container="body" data-placement="right" bs-tooltip bs-enabled="ctrl.toggle">
+                    <a ui-sref="dashboard.list"><span><div class="img-link"><i class="fa fa-tachometer"></i></div>Dashboard</span></a>
+                </li>
+                <li class="panel" data-title="Leden" data-container="body" data-placement="right" bs-tooltip bs-enabled="ctrl.toggle" ng-class="{active:$state.includes('leden')}">
+                    <span data-toggle="collapse" data-parent="#accordion" data-target="#leden" aria-expanded="true" aria-controls="products" ng-class="{collapsed:$state.includes('leden')}"><div class="img-link"><i class="fa fa-th-large"></i></div>Leden<i class="fa fa-angle-down"></i></span>
+                    <ul class="collapse" id="leden" class="collapse" aria-labelledby="products" ng-class="{in:$state.includes('leden')}">
+                        <li class="collapse-subitem"><a ui-sref="persoon.list">Ledenlijst</a></li>
+                        <li class="collapse-subitem"><a ui-sref="persoon.create">Nieuw lid</a></li>
+                    </ul>
+                </li>
+                <li class="panel" data-title="Organisatie" data-container="body" data-placement="right" bs-tooltip bs-enabled="ctrl.toggle" ng-class="{active:$state.includes('orga')}">
+                    <span data-toggle="collapse" data-parent="#accordion" data-target="#orga" aria-expanded="true" aria-controls="products" ng-class="{collapsed:$state.includes('orga')}"><div class="img-link"><i class="fa fa-institution"></i></div>Organisatie<i class="fa fa-angle-down"></i></span>
+                    <ul class="collapse" id="orga" class="collapse" aria-labelledby="products" ng-class="{in:$state.includes('orga')}">
+                        <li class="collapse-subitem"><a ui-sref="aanhef.list">Details</a></li>
+                        <li class="collapse-subitem"><a ui-sref="aanhef.list">Contactpersonen</a></li>
+                        <li class="collapse-subitem"><a ui-sref="functie.list">Functies</a></li>
+                    </ul>
+                </li>
+
+                <li class="panel" data-title="Financiëel" data-container="body" data-placement="right" bs-tooltip bs-enabled="ctrl.toggle" ng-class="{active:$state.includes('fina')}">
+                    <span data-toggle="collapse" data-parent="#accordion" data-target="#fina" aria-expanded="true" aria-controls="products" ng-class="{collapsed:$state.includes('fina')}"><div class="img-link"><i class="fa fa-money"></i></div>Financiëel<i class="fa fa-angle-down"></i></span>
+                    <ul class="collapse" id="fina" class="collapse" aria-labelledby="products" ng-class="{in:$state.includes('fina')}">
+                        <li class="collapse-subitem"><a ui-sref="aanhef.list">Inningen</a></li>
+                        <li class="collapse-subitem"><a ui-sref="aanhef.list">In behandeling</a></li>
+                        <li class="collapse-subitem"><a ui-sref="openstaand.list">Openstaande posten</a></li>
+                        <li class="collapse-subitem"><a ui-sref="aanhef.list">Weigeringen</a></li>
+                        <li class="collapse-subitem"><a ui-sref="aanhef.list">Betalingsarchief</a></li>
+                    </ul>
+                </li>
+                <li class="panel" data-title="Rapportage" data-container="body" data-placement="right" bs-tooltip bs-enabled="ctrl.toggle" ng-class="{active:$state.includes('rapp')}">
+                    <span data-toggle="collapse" data-parent="#accordion" data-target="#rapp" aria-expanded="true" aria-controls="products" ng-class="{collapsed:$state.includes('rapp')}"><div class="img-link"><i class="fa fa-line-chart"></i></div>Rapportage<i class="fa fa-angle-down"></i></span>
+                    <ul class="collapse" id="rapp" class="collapse" aria-labelledby="products" ng-class="{in:$state.includes('rapp')}">
+						<!-- <li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=pers.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin=313">Persoonsgegevens</a></li> -->
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=jr18.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Overzicht 18-jr</a></li>
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=eind.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Beëindigingen</a></li>
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=verj.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Verjaardagslijst</a></li>
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=grpn.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Groepslijst</a></li>
+						<!-- <li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=groep.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Groepslijst 2</a></li> -->
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=gzin.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Gezinsoverzicht 1</a></li>
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=gzn2.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Gezinsoverzicht 2</a></li>
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=jbl1.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Jubilarissen</a></li>
+						<!-- <li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=jbl2.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Jubilarissen 2</a></li> -->
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=beta.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Betalingen</a></li>
+						<!--		  <li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=inbh.fr3&multipage=0&pagenav=1&bedrijfin={{ctrl.Bedrijf}}">In Behandeling</a></li>
+								  <li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=open.fr3&multipage=0&pagenav=1&bedrijfin={{ctrl.Bedrijf}}">Openstaande posten</a></li>
+								  <li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=verenig.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Vereniging PDF</a></li>
+								  <li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=verenig.fr3&multipage=0&pagenav=1&bedrijfin={{ctrl.Bedrijf}}">Vereniging</a></li>
+						-->
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=t001.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Actuarieel Rapport</a></li>
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=actuxls.fr3&multipage=0&pagenav=1&format=XLS&bedrijfin={{ctrl.Bedrijf}}">Actuariëel XLS</a></li>
+						<li><a href="http://178.18.85.124:8097/cgi/fastreport.exe?report=lemu.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin={{ctrl.Bedrijf}}">Ledenkaart</a></li>
+
+                    </ul>
+                </li>
+                <li class="panel" data-title="Administratie" data-container="body" data-placement="right" bs-tooltip bs-enabled="ctrl.toggle" ng-class="{active:$state.includes('admin')}">
+                    <span data-toggle="collapse" data-parent="#accordion" data-target="#admin" aria-expanded="true" aria-controls="products" ng-class="{collapsed:$state.includes('admin')}"><div class="img-link"><i class="fa fa-folder"></i></div>Administratie<i class="fa fa-angle-down"></i></span>
+                    <ul class="collapse" id="admin" class="collapse" aria-labelledby="products" ng-class="{in:$state.includes('admin')}">
+                        <li><a ui-sref="soortlid.list">Soort Lid</a></li>
+                        <li><a ui-sref="groep.list">Tariefgroepen</a></li>
+                        <li><a ui-sref="soortbetaling.list">Tariefsoorten</a></li>
+                        <li><a ui-sref="aanhef.list">Aanhef</a></li>
+                        <li><a ui-sref="kenmerk.list">Kenmerken</a></li>
+                        <!--<li><a ui-sref="kenmkode.list">Waardes per Kenmerk</a></li>-->
+                        <li><a ui-sref="regio.list">Regio's</a></li>
+                        <li><a ui-sref="titel.list">Titels</a></li>
+                        <li><a ui-sref="categorie.list">Categoriën</a></li>
+                        <li><a ui-sref="mutreden.list">Mutatieredenen</a></li>
+                        <li><a ui-sref="functie.list">Functies</a></li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active" data-title="Gebruikers" data-container="body" data-placement="right" bs-tooltip bs-enabled="ctrl.toggle">
+                    <a ui-sref="home.init"><span><div class="img-link"><i class="fa fa-users"></i></div>Gebruikers</span></a>
+                </li>
+
+                <li class="panel" style="border:none">
+                    <div class="sidebar-footer">
+                        <div class="col-xs-12">
+                            <a ui-sref="auth.logout">
+                                Logout <i class="fa fa-sign-out"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+            </div><!-- /#accordion -->
+
+        </perfect-scrollbar>
+
+    </ul>
+</nav>

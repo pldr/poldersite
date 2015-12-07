@@ -1,0 +1,118 @@
+.group-list-article {
+    font-style: italic;
+    font-size: 15px;
+    .icon {
+        font-size: 18px;
+        font-style: normal;
+        top: 2px;
+        position: relative;
+    }
+}
+
+.featured-article {
+    .group-list-article {
+        display: inline;
+        .group-list {
+            a,
+            .icon {
+                color: darken(@brand-light, 35%);
+            }
+        }
+    }
+    position: relative;
+    .col-sm-height {
+        overflow: hidden;
+    }
+    img.img-responsive {
+        display: inline;
+    }
+    .panel-body {
+        color: #fff;
+        background-color: #515151;
+        display: table;
+    }
+    .cover-col {
+        width: 50%;
+        display: table-cell;
+        .content {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+        .btn {
+            margin-top: 15px;
+            font-size: .8em;
+            font-weight: bold;
+            position: absolute;
+            bottom: 500px;
+            left: 40px;
+        }
+        .btn:hover,
+        .btn:active {
+            background-color: transparent;
+        }
+        .card-avatars {
+            position: absolute;
+            bottom: 500px;
+            right: 0;
+            font-size: 2em;
+        }
+    }
+    .featured-content {
+        padding-top: 15px;
+        padding-right: 30px;
+        i {
+            font-weight: bold;
+        }
+    }
+    .bottom {
+        position: absolute;
+        left: 50%;
+        width: 50%;
+        bottom: 0px;
+        .globe {
+            position: absolute;
+            bottom: 0px;
+            right: 15px;
+            font-size: 2.2em;
+            color: @brand-primary;
+            line-height: 0;
+        }
+        .tags {
+            color: #858384;
+            font-style: italic;
+        }
+        .comments-counter {
+            color: #858384;
+            i {
+                position: relative;
+                top: 6px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .featured-article {
+        .featured-content {
+            padding: 15px 30px;
+        }
+        .bottom {
+            position: relative;
+            padding: 0px 30px;
+            width: 100%;
+            left: 0;
+            .comments-counter {
+                display: block;
+                margin: 0;
+            }
+            .globe {
+                right: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,136 @@
+<div class="top-content">
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+                    <h1><strong>Poldersoft</strong> Sign up</h1>
+                    <div class="description">
+                        <p>
+                            Description for poldersoft
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Sign up to our site</h3>
+                            <p>Enter your username, name, email and password to sign up:</p>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-key"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form name="registerForm" ng-submit="ctrl.submit(ctrl.model)" class="login-form">
+                            <div class="form-group">
+                                <label class="sr-only" for="form-username">Username</label>
+                                <input type="text" name="username" placeholder="Username..."
+                                       ng-model="ctrl.model.username"
+                                       ng-model-options="{updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }"
+                                       class="form-username form-control"
+                                       ng-minlength="ctrl.passwordMinLength"
+                                       ng-change="ctrl.checkUserName(ctrl.model.username)"
+                                       id="form-username" required>
+                            </div>
+
+                            <div class="form-group text-center alert-info" ng-show="registerForm.username.$error.minlength" class="text-center text-info">
+                                Username should have a length of at least 4 characters
+                            </div>
+
+                            <div flash-alert
+                                 active-class="in"
+                                 ng-show="flash.type"
+                                 class="form-group text-center fade"
+                                 ng-class="{'text-success' : flash.type == 'success', 'text-danger': flash.type == 'error'}" duration="0">
+                                <span class="alert-message">{{flash.message}}</span>
+                            </div>
+
+                            <p ng-show="ctrl.suggestions.login">Would you like to <a ui-sref="auth.login({username: ctrl.model.username})">login</a> or
+                                <a ui-sref="auth.forgot({username: ctrl.model.username})"> recover your password</a>?</p>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="form-name">Name</label>
+                                <input type="text" name="form-name" placeholder="Name..." ng-model="ctrl.model.name" class="form-username form-control" id="form-name" required>
+                            </div>
+                            <div flash-alert
+                                 id="nameAvailability"
+                                 active-class="in"
+                                 ng-show="flash.type"
+                                 class="form-group alert text-center fade"
+                                 ng-class="{'alert-success' : flash.type == 'success', 'alert-danger': flash.type == 'error'}" duration="0">
+                                <span class="alert-message">{{flash.message}}</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="form-name">Email</label>
+                                <input type="email" name="email" placeholder="Email..." ng-model="ctrl.model.email" class="form-username form-control" id="form-name" required>
+                            </div>
+
+                            <div class="form-group text-center alert-info" ng-show="registerForm.email.$error.email" class="text-center text-info">
+                                Should introduce a valid email with the format 'example@domain.com'
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="form-password">Password</label>
+                                <input type="password" name="password" placeholder="Password..." ng-model="ctrl.model.password"
+                                       class="form-password form-control"
+                                       ng-change="ctrl.comparePasswords(ctrl.model.password, ctrl.repeatPassword, ctrl)"
+                                       ng-minlength="ctrl.passwordMinLength"
+                                       id="form-password"
+                                       required
+                                    >
+                            </div>
+
+                            <div class="form-group text-center alert-info" ng-show="registerForm.password.$error.minlength" class="text-center text-info">
+                                Password should have a length of at least 4 characters
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="form-password">Repeat password</label>
+                                <input type="password" name="repeat-password" placeholder="Repeat password..." ng-model="ctrl.repeatPassword"
+                                       ng-change="ctrl.comparePasswords(ctrl.model.password, ctrl.repeatPassword, ctrl)"
+                                       class="form-password form-control"
+                                       ng-disabled="registerForm.password.$invalid"
+                                       id="form-password"
+                                       required>
+                            </div>
+
+                            <div flash-alert
+                                 id="passwordCheck"
+                                 active-class="in"
+                                 ng-show="flash.type"
+                                 class="form-group text-center fade"
+                                 ng-class="{'text-success' : flash.type == 'success', 'text-danger': flash.type == 'error'}" duration="0">
+                                <span class="alert-message">{{flash.message}}</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-sign-up" ng-disabled="registerForm.$invalid || !ctrl.validPass || !ctrl.validName" >Sign up!</button>
+                            <br/>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 social-login">
+                        <h3>...or </h3>
+                        <div class="social-login-buttons">
+                            <a class="btn btn-link-1 btn-link-1-google-plus" ui-sref="auth.login">
+                                Login
+                            </a>
+                        </div>
+                        <div class="social-login-buttons">
+                            <a class="btn btn-link-1 btn-link-1-twitter" ui-sref="auth.forgot">
+                                Forgot password
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

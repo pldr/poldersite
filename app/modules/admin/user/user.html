@@ -1,0 +1,46 @@
+<!--                                     -->
+<!-- Overzicht Users                -->
+<!--                                     -->
+<h3>Overzicht Gebruikers</h3>
+<hr/>
+<div>
+  <a ui-sref="home.init"              class="btn btn-lg btn-success">Terug</a>
+  <!-- <button ng-click="clickGet()"  class="btn btn-lg btn-primary">Zoeken</button> -->
+  <a ui-sref="user.create"      class="btn btn-lg btn-primary">Nieuw</a>
+  <!-- <button ng-click="clickCancel()" class="btn btn-lg btn-primary">Doe iets</button> -->
+  <!-- <button ng-click="delUser()" class="btn btn-lg btn-primary">Verwijder</button> -->
+  <br><br>
+<!--
+  <p>
+    Filter : <input type="text" size="10" height="28" ng-model="filter.user" class="input" placeholder="User..."/>
+    <input type="text" size="10" ng-model="filter.passwrd" class="input" placeholder="Passwrd..." />
+    <button class="btn btn-lg btn-primary" ng-click="clearFilter();">Clear</button>
+  </p>
+-->
+  <div class="person-grid">
+    <scrollable-table watch="user" watch-cols="display">
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <!-- <th><center><input type="checkbox" ng-change="checkAll(selectedAll);" ng-model="selectedAll" ng-true-value="true" ng-false-value="false" /></center></th> -->
+            <th col="username" ng-if="display.userUsername"> <a href="javascript:void(0);" ng-click="clickSort('Username', !reverse)">User</a></th>
+            <th col="passwrd"  ng-if="display.userPasswrd">  <a href="javascript:void(0);" ng-click="clickSort('Passwrd', !reverse)">Passwrd</a></th>
+            <th>&nbsp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="users in user | orderBy: mySort : reverse
+          | filter : { Username: filter.username, Passwrd: filter.passwrd } as numResults" ng-click="goViewUser(users.Username)">
+          <td ng-if="display.userUsername">{{ users.Username }}</td>
+          <td ng-if="display.userPasswrd">{{ users.Passwrd }}</td>
+          <td style="width:50px"><button type="button" ng-click="clickDel(users.Username)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </scrollable-table>
+  </div>
+  <div ng-if="numResults.length === 0">
+    <strong>Geen resultaten gevonden...</strong>
+  </div>
+</div>
+<hr/>

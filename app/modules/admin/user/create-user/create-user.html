@@ -1,0 +1,29 @@
+<div>
+  <div class="jumbotron">
+    <h1>Nieuwe user toevoegen</h1>
+    <form ng-submit="addUser(form)" name="form" novalidate>
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="form-group" ng-class="{'has-error':form.user.$invalid && submitted}">
+            <input type="text" ng-model="users.user" name="user"
+                   class="form-control input"
+                   placeholder="users" required />
+            <p class="help-block" ng-show="form.users.$error.required && submitted">
+              This input is required
+            </p>
+          </div>
+          <div class="form-group" ng-class="{'has-error':form.passwrd.$invalid && submitted}">
+            <input type="text" ng-model="users.passwrd" name="passwrd"
+                   class="form-control input" placeholder="passwrd" required/>
+            <p class="help-block" ng-show="form.passwrd.$error.required && submitted">
+              This input is required
+            </p>
+          </div>
+          <button class="btn btn-lg btn-primary" type="submit">Toevoegen</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr/>
+  <a ui-sref="adminUser" class="btn btn-lg btn-warning">Annuleren</a>
+</div>

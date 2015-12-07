@@ -1,0 +1,37 @@
+<div>
+  <h3><b>Nieuwe regio</b></h3>
+  <hr/>
+  <form ng-submit="addRegio(form)" name="form" novalidate>
+  <a ui-sref="regio.list"                        class="btn btn-lg btn-success">Terug</a>
+  <br/>
+  <div class="clearfix"></div>
+  <br/>
+  <!--  <div class="jumbotron">
+  Override rounded corners in jumbotron -->
+    <div style="border-radius: 0px !important" class="jumbotron">
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="form-group" ng-class="{'has-error':form.regio.$invalid && submitted}">
+            <input type="text" ng-model="regios.Regio" name="regio"
+                   class="form-control input"
+                   placeholder="Regio" required />
+            <p class="help-block" ng-show="form.regios.$error.required && submitted">
+              This input is required
+            </p>
+          </div>
+          <div class="form-group" ng-class="{'has-error':form.omschrijving.$invalid && submitted}">
+            <input type="text" ng-model="regios.Omschrijving" name="omschrijving"
+                   class="form-control input" placeholder="Omschrijving" required/>
+            <p class="help-block" ng-show="form.omschrijving.$error.required && submitted">
+              This input is required
+            </p>
+          </div>
+
+			<button class="btn btn-lg btn-new" type="submit">Toevoegen</button>
+			<a ui-sref="regio.list" class="btn btn-lg btn-cancel">Annuleren</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr/>
+</div>

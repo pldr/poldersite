@@ -1,0 +1,46 @@
+.notification {
+    .notification-icon {
+        top: 6px;
+        position: relative;
+    }
+    .dropdown-menu {
+        right: 0;
+        left: auto;
+        font-size: 12px;
+        .list-group {
+            max-height: 216px;
+            overflow: hidden;
+            .list-group-item.unread {
+                background-color: @hover-color;
+            }
+            .list-group-item.unread:hover {
+                background-color: #fff;
+            }
+            .block {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+        .list-group.overflow:hover {
+            overflow-y: scroll;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .notification {
+        .dropdown-menu {
+            position: fixed;
+            top: 49px;
+            right: 0;
+            left: 50%;
+            margin-left: -159px;
+            .list-group.overflow {
+                overflow-y: scroll;
+                /* has to be scroll, not auto */
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+    }
+}

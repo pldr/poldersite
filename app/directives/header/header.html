@@ -1,0 +1,105 @@
+<header class="header">
+  <div class="container container-wide">
+    <div class="text-right">
+      <div ng-if="user.id">
+        {{user.username}},
+        <a ui-sref="logout">{{user.username}} in administratie {{user.bedrijf}} logout</a>
+      </div>
+      <div ng-if="!user.id"><a ui-sref="login">Login</a></div>
+    </div>
+    <ul class="menu-top">
+      <li><a ui-sref="home.init">Dashboard</a></li>
+      <li>
+        <a>Leden</a>
+        <ul>
+          <li><a ui-sref="home">LedenLijst</a></li>
+          <li><a ui-sref="createPerson">Nieuw Lid</a></li>
+        </ul>
+      </li>
+      <!-- <li>
+        <a>Soort</a>
+        <ul>
+          <li><a ui-sref="soortlid">SoortLid</a></li>
+          <li><a ui-sref="createSoortlid">Nieuw SoortLid</a></li>
+        </ul>
+      </li>
+      <li>
+        <a>Regio</a>
+        <ul>
+          <li><a ui-sref="regio">Regio</a></li>
+          <li><a ui-sref="createRegio">Nieuw Regio</a></li>
+        </ul>
+      </li> -->
+      <li>
+        <a>Organisatie</a>
+        <ul>
+          <li><a>Details</a></li>
+          <li><a>Contactpersonen</a></li>
+          <li><a>Functies</a></li>
+          <!-- <li><a ui-sref="soortlid">SoortLid</a></li>
+          <li><a ui-sref="regio">Regio</a></li> -->
+        </ul>
+      </li>
+      <li>
+        <a>Financieel</a>
+        <ul>
+          <li><a>Inningen</a></li>
+          <li><a>In behandeling</a></li>
+          <li><a>Openstaande posten</a></li>
+          <li><a>Weigeringen</a></li>
+          <li><a>Betalingsarchief</a></li>
+        </ul>
+      </li>
+      <li>
+        <a>Rapportage</a>
+        <ul>
+<!--
+          <li><a>Per leeftijd</a></li>
+          <li><a>In behandeling</a></li>
+          <li><a>Te veel betaald</a></li>
+-->
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=pers.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin=8">Persoonsgegevens PDF</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=jr18.fr3&multipage=0&pagenav=1&bedrijfin=8">Overzicht 18-jarigen</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=eind.fr3&multipage=0&pagenav=1&bedrijfin=8">Beëindigingen</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=verj.fr3&multipage=0&pagenav=1&bedrijfin=8">Verjaardagslijst</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=grpn.fr3&multipage=0&pagenav=1&bedrijfin=8">Groepslijst</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=groep.fr3&multipage=0&pagenav=1&bedrijfin=8">Groepslijst 1</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=gzin.fr3&multipage=0&pagenav=1&bedrijfin=8">Gezinsoverzicht</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=gzn2.fr3&multipage=0&pagenav=1&bedrijfin=8">Gezinsoverzicht 2</a></li>
+  		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=jbl1.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin=8">Jubilarissen Inschrijvingen PDF</a></li>
+  		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=jbl2.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin=8">Jubilarissen Verjaardagen PDF</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=beta.fr3&multipage=0&pagenav=1&bedrijfin=8">Betalingen</a></li>
+<!--		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=inbh.fr3&multipage=0&pagenav=1&bedrijfin=8">In Behandeling</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=open.fr3&multipage=0&pagenav=1&bedrijfin=8">Openstaande posten</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=verenig.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin=8">Vereniging PDF</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=verenig.fr3&multipage=0&pagenav=1&bedrijfin=8">Vereniging</a></li>
+-->
+  		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=t001.fr3&multipage=0&pagenav=1&format=PDF&bedrijfin=8">Actuarieel Rapport PDF</a></li>
+  		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=actuxls.fr3&multipage=0&pagenav=1&format=XLS&bedrijfin=8">Actuarieel Rapport XLS</a></li>
+		  <li><a href="http://85.17.251.45:8097/cgi/fastreport.exe?report=lemu.fr3&multipage=0&pagenav=1&bedrijfin=8">Ledenkaart (wait 2 a 3 minutes)</a></li>
+		  </ul>
+      </li>
+      <li>
+        <a>Administratie</a>
+        <ul>
+          <li><a>Administratie</a></li>
+          <li><a ui-sref="adminLidsoorten">Soort Lid</a></li>
+          <li><a ui-sref="adminGroep">Tariefgroepen</a></li>
+          <li><a ui-sref="adminSoortBetaling">Tariefsoorten</a></li>
+          <li><a ui-sref="aanhef.list">Aanhef</a></li>
+          <li><a ui-sref="adminKenmerk">Kenmerken</a></li>
+          <li><a ui-sref="adminKenmKode">Waardes per Kenmerk</a></li>
+          <li><a ui-sref="adminRegio">Regio's</a></li>
+          <li><a ui-sref="adminTitel">Titels</a></li>
+          <li><a ui-sref="adminCategorie">Categoriën</a></li>
+          <li><a ui-sref="adminMutReden">Mutatieredenen</a></li>
+          <li><a ui-sref="adminFunctie">Functies</a></li>
+          <li><a ui-sref="adminPersoon">Persoon</a></li>
+          <li><a></a></li>
+        </ul>
+      </li>
+<!--      <li><a>Gebruikers</a></li> -->
+        <li><a ui-sref="user.list">Gebruikers</a></li>
+    </ul>
+  </div>
+</header>

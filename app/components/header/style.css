@@ -1,0 +1,87 @@
+/* BORDER RADIUS */
+/* OPACITY */
+/* BOX-SHADOW */
+/*GRADIENTS*/
+/* TRANSITIONS */
+/*TRANSFORMS*/
+/*ANIMATION*/
+/* TOGGLE */
+/* CHECKBOX */
+/* RADIO */
+.pldr-navbar {
+  height: 60px;
+  background: #fff;
+  margin-bottom: 15px;
+  vertical-align: middle;
+  line-height: 60px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  -o-box-shdow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.pldr-navbar .page-title {
+  font-size: 18px;
+}
+.pldr-navbar .date {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.avatar {
+  border-radius: 500px;
+  display: block;
+  position: relative;
+  white-space: nowrap;
+}
+.avatar img {
+  border-radius: 500px;
+  width: 50px;
+  height: 50px;
+}
+.avatar i {
+  border-radius: 100%;
+  border-style: solid;
+  border-width: 2px;
+  height: 10px;
+  left: 0;
+  margin: 2px;
+  position: absolute;
+  top: 0;
+  width: 10px;
+}
+.avatar i.right {
+  left: auto;
+  right: 0;
+}
+.avatar i.bottom {
+  bottom: 0;
+  left: auto;
+  right: 0;
+  top: auto;
+}
+.avatar i.left {
+  bottom: 0;
+  top: auto;
+}
+.avatar i.on {
+  background-color: #41a85f;
+}
+.avatar i.off {
+  background-color: #999999;
+}
+.avatar i.busy {
+  background-color: #f05050;
+}
+.avatar i.away {
+  background-color: #fad733;
+}
+.avatar.thumb-md i {
+  height: 12px;
+  margin: 3px;
+  width: 12px;
+}
+.avatar.thumb-sm i {
+  margin: 1px;
+}
+.avatar.thumb-xs i {
+  margin: 0;
+}

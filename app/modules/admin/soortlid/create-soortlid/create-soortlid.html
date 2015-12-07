@@ -1,0 +1,37 @@
+<div>
+  <h3><b>Nieuwe soortlid</b></h3>
+  <hr/>
+  <form ng-submit="addSoortLid(form)" name="form" novalidate>
+  <a ui-sref="soortlid.list"                        class="btn btn-lg btn-success">Terug</a>
+  <br/>
+  <div class="clearfix"></div>
+  <br/>
+  <!--  <div class="jumbotron">
+  Override rounded corners in jumbotron -->
+    <div style="border-radius: 0px !important" class="jumbotron">
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="form-group" ng-class="{'has-error':form.soortlid.$invalid && submitted}">
+            <input type="text" ng-model="soortlids.SoortLid" name="soortlid"
+                   class="form-control input"
+                   placeholder="SoortLid" required />
+            <p class="help-block" ng-show="form.soortlids.$error.required && submitted">
+              This input is required
+            </p>
+          </div>
+          <div class="form-group" ng-class="{'has-error':form.omschrijving.$invalid && submitted}">
+            <input type="text" ng-model="soortlids.Omschrijving" name="omschrijving"
+                   class="form-control input" placeholder="Omschrijving" required/>
+            <p class="help-block" ng-show="form.omschrijving.$error.required && submitted">
+              This input is required
+            </p>
+          </div>
+
+			<button class="btn btn-lg btn-new" type="submit">Toevoegen</button>
+			<a ui-sref="soortlid.list" class="btn btn-lg btn-cancel">Annuleren</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr/>
+</div>

@@ -1,0 +1,750 @@
+// Lixil CSS styles
+// Global Styles
+iframe {
+	border: none;
+}
+
+a.navbar-brand:focus, a.navbar-brand:hover {
+  color: @brand-primary;
+  text-decoration: none;
+}
+.text-bold {
+	font-weight: bold;
+}
+.panel-primary {
+	border-color: transparent;
+}
+
+.panel-primary .panel-heading {
+	background-color: @brand-primary;
+	border-color: @brand-primary;
+}
+
+.relative {
+	position: relative;
+}
+
+.text-italic {
+	font-style: italic;
+}
+//  Form Validation
+	.form-error {
+		color: @brand-danger;
+		margin-top : 10px;
+	}
+	.change-box .alert {
+		margin-bottom: 0px;
+	}
+.navbar-brand:hover{
+	color: @brand-primary;
+}
+//placeholder polyfill
+.empty {
+	color: #aaa;
+}
+
+.highlight {
+	position: relative;
+	max-height: 320px;
+	overflow: hidden;
+	img{
+		width: 100%;
+	}
+}
+.highlight:hover {
+	cursor:pointer;
+}
+.no-margin {
+	margin: 0px
+}
+// Avatar Directive
+
+
+// Filters styling
+
+.filters-desktop .form-group{
+	margin-right: 15px;
+}
+.filters-desktop .form-control {
+	border-radius: 4px;
+}
+.filters-desktop input {
+	max-width: 50px;
+	border-radius: 4px;
+}
+.filters-desktop .locale .ui-select-container  {
+	min-width: 150px
+}
+.filters-desktop .country-loader{
+	display: inline;
+}
+
+.filters-desktop label {
+	font-weight: bold;
+	margin-right: 10px;
+}
+//Select 2 Styling Overrides
+.ui-select-bootstrap .ui-select-choices-row.active > a {
+	background-color: @brand-primary;
+}
+.ui-select-match-item{
+	background-color: @brand-light;
+	border-radius: 4px;
+}
+.btn-default.ui-select-toggle {
+	box-shadow: none;
+	border-color: @border-color;
+	border-radius: @border-radius-base;
+}
+
+.form-group.merged {
+	margin-bottom: 0px;
+}
+.form-group.merged > .form-control {
+	border-bottom: none;
+}
+form.auth .form-control {
+	height: 42px;
+}
+.dropdown-menu > li > a.admin {
+	background-color: @brand-primary;
+	color: #fff;
+}
+.dropdown-menu > li > a.admin:hover {
+	background-color: darken(@brand-primary,4%) !important;
+}
+//Loader
+.loader-wrapper{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.loader-wrapper > div {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.cg-busy-backdrop {
+	opacity: .3;
+	position: fixed;
+}
+
+.loader-autocomplete img  {
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	margin-top: -8px;
+}
+//i checks fix
+.i-checks {
+	span{
+		margin-left: 5px;
+	}
+}
+//button fixes
+
+.btn-sm {
+	font-size: 14px;
+}
+
+.underline-link {
+				padding-bottom: 2px;
+				border-bottom: 1px solid @brand-dark;
+			}
+.underline-link:hover {
+	cursor: pointer;
+}
+//Signup Page
+h3.bold {
+	font-weight: bold;
+}
+
+//Helpers
+.t-15 {
+	margin-top: 15px;
+}
+
+.card-cover, .highlight{
+	position: relative;
+	.overlay {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		z-index: 2;
+	}
+	.overlay.lixil {
+		background: url(/images/x_overlay.svg) center right no-repeat;
+		background-size: contain;
+	}
+
+	.overlay.video {
+		background: url(/images/video_overlay.svg) center center no-repeat;
+	}
+}
+//Drawer Styles
+.snap-content {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+//Article
+.blog-post {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 16px;
+	.panel {
+		border: none;
+	}
+	.comment-box {
+		right: 0px;
+	}
+}
+
+//Stream
+.pointer:hover {
+	cursor: pointer
+}
+.stream-container {
+	background-color: @brand-light;
+}
+.stream {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.no-articles {
+	text-align: center;
+}
+.no-padding{
+	padding: 0;
+}
+.article-card .card-link:hover {
+	cursor: pointer;
+}
+
+.article-card .card-author {
+	padding-top: 8px;
+}
+.article-card .card-cover:hover {
+	cursor:pointer;
+}
+
+.article-card {
+
+	position: relative;
+
+	.card-body{
+		font-size: 16px;
+		padding: 0px;
+		margin-left: -15px;
+		.moment {
+		position: absolute;
+		right: 15px;
+	}
+	.bottom {
+		position: absolute;
+		left: 41.66666667%;
+		width: 58.22222223%;
+		bottom: 15px;
+		.col-xs-6 {
+			padding: 0;
+		}
+		.avatar {
+			position: relative;
+			top: 10px;
+		}
+	}
+	}
+}
+
+.article-card .card-body h1 {
+	margin: 0 0 15px 0;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+.highlight-panel{
+	.card-date {
+		display: inline-block;
+		font-weight: bold;
+		margin-top: 9px;
+	}
+	.globe {
+		width: 36px;
+		height: 36px;
+	}
+
+}
+.article-card .card-date {
+	font-weight: bold;
+}
+
+.article-card .card-content {
+	padding: 0px;
+}
+
+.article-card .card-body .read-more {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.blog-content {
+	img{
+		max-width: 100% !important;
+	}
+	a {
+		color: @text-color !important;
+		text-decoration: underline !important;
+	}
+	a:hover, a:visited {
+		color: @brand-primary !important;
+		text-decoration: underline !important;
+	}
+}
+
+//Media Queries
+
+//xxl
+@media only screen and (min-width : 1200px) {
+.highlight {
+	max-height: 400px;
+}
+
+}
+
+@media only screen and (min-width: 1450px) {
+.highlight img {
+position: relative;top: -80px;
+}}
+// xs
+@media (max-width: 767px) {
+.highlight {
+	max-height: none;
+}
+
+.cover .thumb-lg {
+  width: 50px;
+  margin-top: 25px;
+}
+
+.corporate {
+	left: 0 !important;
+}
+
+.article-card {
+	.card-body{
+		margin: 0px;
+		.col-sm-5 {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.moment {
+			position: relative;
+			float: right;
+		}
+		.bottom{
+			position: relative;
+			padding: 0px 0px 0px 30px;
+			width: 100%;
+			left: 0;
+		}
+	}
+	.card-cover {
+		width: 100%;
+		float: none;
+		margin: 0;
+		padding: 0;
+	}
+	.card-content {
+		padding: 0px 15px 15px;
+	}
+	.globe {
+		position: absolute;
+		bottom: 7px;
+		right: 15px;
+		font-size: 2em;
+	}
+}
+.highlight {
+img{
+	width: 120%;
+}
+
+}
+
+.i-checks {
+	margin-bottom: 5px !important;
+}
+
+.featured-article {
+
+	.panel-body{
+		color: #fff;
+		height: auto;
+		overflow: hidden;
+		background-color: #363f44;
+	}
+	.cover-image {
+		width: 100%;
+		float: none;
+		background-position: center center;
+
+		  /* Background image doesn't tile */
+		  background-repeat: no-repeat;
+
+		  /* Background image is fixed in the viewport so that it doesn't move when
+		     the content's height is greater than the image's height */
+		  background-attachment: cover;
+
+		  /* This is what makes the background image rescale based
+		     on the container's size */
+		  background-size: cover;
+	}
+	.cover-title {
+		position: relative;
+		width: 100%;
+		float: none;
+		padding: 20px 40px;
+		display: table;
+		height: 100%;
+		.content {
+			display: table-cell;
+			vertical-align: middle;
+			h1{
+			font-size: 1.8em;
+			}
+			h2 {
+				font-size: 1.2em;
+			}
+			.btn {
+				margin-top: 15px;
+				font-size: .8em;
+				font-weight: bold;
+			}
+		}
+
+		.featured-mention {
+			position: absolute;
+			top: -27px;
+			left: 40px;
+			font-size: .8em;
+			font-weight: bold;
+			text-transform: uppercase;
+			background-color: @brand-primary;
+			padding: 5px 20px;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+	}
+
+}
+}
+//IOs auto zoom fix
+@media only-screen and (-webkit-min-device-pixel-ratio:0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+    background: #eee;
+  }
+}
+@media only screen and (min-width: 1450px) {
+.highlight img {
+position: relative;top: -80px;
+}
+}
+//drawer
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover {
+	background-color: @brand-primary;
+}
+.drawer {
+	.underline-link {
+		border: none;
+		color: #363f44;
+		margin-bottom: 5px;
+	}
+	ul.menu{
+		padding: 15px 0px 15px 15px;
+		> li{
+			list-style: none;
+			margin-bottom: 10px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid @border-color;
+			.padder {
+				padding: 0;
+				margin-top: 10px;
+			}
+			.control-label.text-primary {
+				margin-top: 5px;
+				display: block;
+			}
+		}
+	}
+}
+.lixil-nav{
+background-color: #fff;
+.navbar-right {
+	padding-left: 15px;
+}
+}
+
+.form-search {
+	.navbar-form {
+		box-shadow: none;
+		margin-right: 0px;
+	}
+};
+.searchbox {
+	transition: width 1s, padding 1s;
+}
+
+.search-count {
+	font-size: 1.5em;
+}
+.search-btn{
+	margin-right: 15px;
+}
+
+
+/* Management Section */
+//Corporate Messages
+////
+p.title {
+		font-size: 1.2em;
+		color: darken(@brand-light, 25%);
+
+}
+.corporate {
+	position: absolute;
+	bottom:0;
+	left: 15px;
+	color: #fff;
+	font-weight: bold;
+	font-style: italic;
+	background-color: @brand-primary;
+	padding: 5px 15px;
+	z-index: 1;
+}
+.blog-post .corporate {
+	left: 0px;
+}
+
+.default-message {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin-top: -25px;
+	p {
+		font-size: 2em;
+		color: darken(@brand-light, 25%);
+	}
+}
+//Article list
+//.table-striped > tbody > tr:nth-child(odd) {
+.table-striped > tbody > tr:nth-child(odd) {
+	background-color: #FEFEFE;
+}
+
+.label-centered {
+	top: 6px;
+}
+//Article editor
+.checkbox-editor {
+	position: relative;
+}
+.checkbox-editor label{
+  min-height: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+.checkbox-editor input[type="checkbox"]{
+	position: absolute;
+	top: 3px;
+	right: 0px;
+}
+.date-picker .dropdown-menu{
+	.btn {
+		border: none;
+	}
+	.btn-info {
+		background-color: @brand-primary;
+		border-color: @brand-primary;
+	}
+	.text-info {
+		color: @brand-primary;
+	}
+	.btn:active, .btn.active {
+		box-shadow: none;
+	}
+}
+// Administration
+//Users
+.user-col-m {
+	margin-top: 13px;
+}
+.background-container {
+	height:100%;
+
+}
+
+//Help links
+.navbar {
+
+	li {
+		a.help-link {
+			position: relative;
+			top: 12px;
+			font-size: 1.8em;
+			color: @brand-primary;
+			line-height: 0;
+			padding: 0;
+		}
+	}
+}
+
+//Support center modal
+//
+.modal-content {
+	border-radius: 0px;
+	.user-email {
+		text-align: center;
+		width: 250px;
+		background-color: rgb(235, 235, 228);
+	}
+	.help-content {
+		font-size: 12px;
+		.phone-number {
+			color: @brand-primary;
+			font-size: 1.6em;
+		}
+	}
+	.modal-header {
+		height: 62px;
+		h4 {
+			float: left;
+		}
+		.help-container {
+			float: left;
+			margin: -15px 15px 0px -15px;
+			width: 62px;
+			height: 62px;
+			text-align: center;
+			span {
+				position: relative;
+				top: 16px;
+				font-size: 2em;
+				color: @brand-primary;
+			}
+		}
+		.close-container {
+				margin: -15px -15px 0px 15px;
+				width: 62px;
+				height: 62px;
+				line-height: 62px;
+				float: right;
+				border-left: 1px solid @brand-light;
+				text-align: center;
+				span {
+					position: relative;
+					top: 16px;
+					font-size: 2em;
+				}
+		}
+		.close-container:hover {
+			cursor: pointer;
+		}
+	}
+}
+.search-box {
+	input{
+        border-right: none;
+    }
+    input:focus {
+        border-color: @border-color;
+    }
+    button {
+        background-color: @brand-primary;
+        border-color: @brand-primary;
+        .icon, .fa{
+            color: #fff;
+        }
+        
+    }
+    button:hover {
+        background-color: @brand-primary;
+        border-color: @brand-primary;
+    }
+    button:disabled {
+        background-color: @brand-dark;
+        border-color: @brand-dark;
+    }
+}
+.nav-tabs {
+	border-bottom: 2px solid @brand-primary;
+}
+.nav-tabs > li {
+	margin-bottom: 0px;
+}
+.nav-tabs > li > a, .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+	border: none;
+	background-color: lighten(@brand-dark, 25%);
+	color: #fff;
+	width: 140px;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	background-color: @brand-primary;
+	color: #fff;
+	border: none;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+	background-color: @hover-color !important;	
+}
+
+.bg-grey {
+	background-color: @brand-light;
+}
+
+.underline:hover {
+	text-decoration: underline;
+}
+
+.no-click {
+	pointer-events: none;
+   cursor: default;
+}
+
+.search-types {
+	background-color: #fff;
+	z-index: 1000;
+	position: absolute;
+	width: 100%;
+	top: 100%;
+	left: 0px;
+	border: 1px solid @border-color;
+	border-top: none;
+	div{
+		padding: 5px 10px;
+	}
+	div:first-child{
+		border-bottom: 1px solid @border-color;
+	}
+	div:hover {
+		background-color: @hover-color;
+		cursor: pointer;
+	}
+}
+
+.no-click:hover {
+	color: @brand-primary !important;	
+}
+
+.p-l-none {
+	padding-left: 0px;
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html ng-app="poldersite">
+  <head>
+    <title>PolderSoft - LedenAdministratie</title>         
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> 
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" />
+<!--
+    <link rel="stylesheet" href="/bower_components/angular-notify/angular-notify.css" />
+    <link rel="stylesheet" href="/bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="/bower_components/angular-busy/dist/angular-busy.min.css" />
+    <link rel="stylesheet" href="app/components/angular-scrollable-table/scrollable-table.css" /> 
+    <link rel="stylesheet" href="bower_components/angular-aside/dist/css/angular-aside.min.css" /> 
+    <link rel="stylesheet" href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" /> 
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" /> 
+    <link rel="stylesheet" href="app/components/sidebar/style.css"/> 
+    <link rel="stylesheet" href="app/assets/styles/animate.css"/>
+    <link rel="stylesheet" href="app/components/header/style.css"/>
+    <link rel="stylesheet" href="app/components/commons/commons.css"/>
+    <link rel="stylesheet" href="app/assets/styles/less/app.css">
+-->	
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"> 
+        <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
+        <link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet"> 
+        <link href="css/preloader.css" rel="stylesheet"> 
+<!--
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+-->
+        <link href="css/animate.css" rel="stylesheet"> 
+        <link href="css/style.css" rel="stylesheet">  
+		
+  </head>
+  <body>
+
+    <!-- Livereload script for development only (stripped during dist build) -->
+    <!-- <script src="http://localhost:35729/livereload.js" data-concat="false"></script> -->
+    <script type="text/javascript" src="RemObjectsSDK.js"></script>
+    <script type="text/javascript" src="PolderJSONLibrary_intf.js"></script>
+
+
+    <script src="/bower_components/jquery/jquery.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/lodash/dist/lodash.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+
+    <script src="i18n/angular-locale_nl-nl.js"></script>
+
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.4.js"></script>
+    <script src="/bower_components/es5-shim/es5-shim.min.js"></script>
+    <script src="/bower_components/angular-file-upload/angular-file-upload.js"></script>
+    <script src="/bower_components/angular-notify/angular-notify.js"></script>
+    <script src="/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="/bower_components/angular-busy/dist/angular-busy.min.js"></script>
+    <script src="/bower_components/angular-csv-import/dist/angular-csv-import.js"></script>
+    <script src="/bower_components/angular-bootstrap-checkbox/angular-bootstrap-checkbox.js"></script>
+    <script src="/bower_components/angular-flash/dist/angular-flash.min.js"></script>
+    <script src="/bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="/bower_components/angular-smart-table/dist/smart-table.js"></script>
+    <script src="/bower_components/angular-aside/dist/js/angular-aside.min.js"></script>
+    <script src="/bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
+    <script src="/bower_components/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+    <script src="/bower_components/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js"></script>
+    <script src="/bower_components/Chart.js/Chart.js"></script>
+    <script src="/bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="/bower_components/underscore/underscore.js"></script>
+
+    <!-- Our components -->
+    <script src="app/components/angular-scrollable-table/angular-scrollable-table.js"></script>
+    <script src="app/components/sidebar/directive.js"></script> 
+    <script src="app/components/tables/export/smartTableDirectives.js"></script>
+    <script src="app/components/tables/export/tableExportDirective.js"></script>
+    <script src="app/components/tables/export/tableExportOptionDirective.js"></script>
+    <script src="app/components/commons/element_deletor/directive.js"></script>
+
+    <script src="app/components/header/header.js"></script> 
+	
+<!--
+    <script src="app/components/tables/kayalshri-tableExport.jquery.plugin-a891806/tableExport.js"></script>
+    <script src="app/components/tables/kayalshri-tableExport.jquery.plugin-a891806/jquery.base64.js"></script>
+    <script src="app/components/tables/kayalshri-tableExport.jquery.plugin-a891806/html2canvas.js"></script>
+    <script src="app/components/tables/kayalshri-tableExport.jquery.plugin-a891806/jspdf/jspdf.js"></script>
+    <script src="app/components/tables/kayalshri-tableExport.jquery.plugin-a891806/jspdf/libs/base64.js"></script>
+    <script src="app/components/tables/kayalshri-tableExport.jquery.plugin-a891806/jspdf/libs/sprintf.js"></script>
+-->
+
+    <script src="app.js"></script>
+
+    <script src="app/modules/auth/main.js"></script> 
+    <script src="app/modules/auth/login/login-controller.js"></script> 
+    <script src="app/modules/auth/forgot/forgot-controller.js"></script> 
+    <script src="app/modules/auth/register/register-controller.js"></script> 
+
+    <script src="app/modules/admin/main.js"></script>
+
+    <script src="app/modules/admin/user/main.js"></script>
+    <script src="app/modules/admin/user/user-controller.js"></script>
+    <script src="app/modules/admin/user/create-user/create-user-controller.js"></script>
+    <script src="app/modules/admin/user/view-user/view-user-controller.js"></script>
+
+<!--
+    <script src="app/modules/admin/aanhef/main.js"></script>
+    <script src="app/modules/admin/aanhef/aanhef-controller.js"></script>
+    <script src="app/modules/admin/aanhef/create-aanhef/create-aanhef-controller.js"></script>
+    <script src="app/modules/admin/aanhef/view-aanhef/view-aanhef-controller.js"></script>
+
+    <script src="app/modules/admin/functie/main.js"></script>
+    <script src="app/modules/admin/functie/functie-controller.js"></script>
+    <script src="app/modules/admin/functie/create-functie/create-functie-controller.js"></script>
+    <script src="app/modules/admin/functie/view-functie/view-functie-controller.js"></script>
+
+    <script src="app/modules/persoon/contriburieregels/main.js"></script>
+    <script src="app/modules/persoon/contriburieregels/contriburieregels-controller.js"></script>
+    <script src="app/modules/persoon/contriburieregels/create-contriburieregels/create-contriburieregels-controller.js"></script>
+    <script src="app/modules/persoon/contriburieregels/view-contriburieregels/view-contriburieregels-controller.js"></script>
+
+    <script src="app/modules/admin/kenmerk/main.js"></script>
+    <script src="app/modules/admin/kenmerk/kenmerk-controller.js"></script>
+    <script src="app/modules/admin/kenmerk/create-kenmerk/create-kenmerk-controller.js"></script>
+    <script src="app/modules/admin/kenmerk/view-kenmerk/view-kenmerk-controller.js"></script>
+
+    <script src="app/modules/admin/kenmkode/main.js"></script>
+    <script src="app/modules/admin/kenmkode/kenmkode-controller.js"></script>
+    <script src="app/modules/admin/kenmkode/kenmkode-controller2.js"></script>
+    <script src="app/modules/admin/kenmkode/create-kenmkode/create-kenmkode-controller.js"></script>
+    <script src="app/modules/admin/kenmkode/view-kenmkode/view-kenmkode-controller.js"></script>
+
+    <script src="app/modules/admin/groep/main.js"></script>
+    <script src="app/modules/admin/groep/groep-controller.js"></script>
+    <script src="app/modules/admin/groep/create-groep/create-groep-controller.js"></script>
+    <script src="app/modules/admin/groep/view-groep/view-groep-controller.js"></script>
+-->
+
+    <script src="app/modules/admin/regio/main.js"></script>
+    <script src="app/modules/admin/regio/regio-controller.js"></script>
+    <script src="app/modules/admin/regio/create-regio/create-regio-controller.js"></script>
+    <script src="app/modules/admin/regio/view-regio/view-regio-controller.js"></script>
+
+    <script src="app/modules/admin/soortlid/main.js"></script>
+    <script src="app/modules/admin/soortlid/soortlid-controller.js"></script>
+    <script src="app/modules/admin/soortlid/create-soortlid/create-soortlid-controller.js"></script>
+    <script src="app/modules/admin/soortlid/view-soortlid/view-soortlid-controller.js"></script>
+
+<!--
+    <script src="app/modules/admin/titel/main.js"></script>
+    <script src="app/modules/admin/titel/titel-controller.js"></script>
+    <script src="app/modules/admin/titel/create-titel/create-titel-controller.js"></script>
+    <script src="app/modules/admin/titel/view-titel/view-titel-controller.js"></script>
+
+    <script src="app/modules/admin/categorie/main.js"></script>
+    <script src="app/modules/admin/categorie/categorie-controller.js"></script>
+    <script src="app/modules/admin/categorie/create-categorie/create-categorie-controller.js"></script>
+    <script src="app/modules/admin/categorie/view-categorie/view-categorie-controller.js"></script>
+
+    <script src="app/modules/admin/soortbetaling/main.js"></script>
+    <script src="app/modules/admin/soortbetaling/soortbetaling-controller.js"></script>
+    <script src="app/modules/admin/soortbetaling/create-soortbetaling/create-soortbetaling-controller.js"></script>
+    <script src="app/modules/admin/soortbetaling/view-soortbetaling/view-soortbetaling-controller.js"></script>
+
+    <script src="app/modules/admin/mutreden/main.js"></script>
+    <script src="app/modules/admin/mutreden/mutreden-controller.js"></script>
+    <script src="app/modules/admin/mutreden/create-mutreden/create-mutreden-controller.js"></script>
+    <script src="app/modules/admin/mutreden/view-mutreden/view-mutreden-controller.js"></script>
+-->
+
+    <script src="app/modules/dashboard/main.js"></script>
+    <script src="app/modules/dashboard/dashboard-controller.js"></script>
+
+<!--
+    <script src="app/modules/financieel/main.js"></script>
+    <script src="app/modules/financieel/openstaand/main.js"></script>
+    <script src="app/modules/financieel/openstaand/openstaand-controller.js"></script>
+    <script src="app/modules/persoon/main.js"></script>
+    <script src="app/modules/persoon/persoon-controller.js"></script>
+    <script src="app/modules/persoon/create-persoon/create-persoon-controller.js"></script>
+    <script src="app/modules/persoon/view-persoon/view-persoon-controller.js"></script>
+-->
+
+    <script src="app/modules/home/main.js"></script>
+    <script src="app/modules/home/home-controller.js"></script>
+
+    <script src="app/modules/person/main.js"></script>
+<!--
+    <script src="app/modules/person/create-person/create-person-controller.js"></script>
+    <script src="app/modules/person/view-person/view-person-controller.js"></script>
+-->
+
+    <script src="app/services/auth-service.js"></script>
+    <script src="app/services/user-service.js"></script>
+
+    <script src="app/services/person-service.js"></script>
+
+<!--
+    <script src="app/services/aanhef-service.js"></script>
+    <script src="app/services/functie-service.js"></script>
+    <script src="app/services/contriburieregels-service.js"></script>
+    <script src="app/services/kenmerk-service.js"></script>
+    <script src="app/services/kenmkode-service.js"></script>
+    <script src="app/services/groep-service.js"></script>
+    <script src="app/services/categorie-service.js"></script>
+    <script src="app/services/soortbetaling-service.js"></script>
+    <script src="app/services/mutreden-service.js"></script>
+    <script src="app/services/persoon-service.js"></script>
+    <script src="app/services/openstaand-service.js"></script>
+    <script src="app/services/titel-service.js"></script>
+-->
+    <script src="app/services/regio-service.js"></script>
+    <script src="app/services/soortlid-service.js"></script>
+    <script src="app/services/dashboard-service.js"></script>
+    <script src="app/services/gebruiker-service.js"></script>
+
+    <div>
+        <div ui-view="" class="app-container"></div>
+    </div>
+
+    <script type="text/javascript">
+
+    createService();
+
+    if (!window.atob) {
+        includeScript("base64.js", function() {
+            if (!window.btoa) window.btoa = base64.encode;
+            if (!window.atob) window.atob = base64.decode;
+        });
+    }
+
+    if (browserTest = RemObjects.UTIL.testBrowser())
+        alert(browserTest);
+        var Service;
+        var svcUrl;
+
+    function createService() {
+
+        function includeScript(scriptSrc, callback) {
+            var headID = document.getElementsByTagName("head")[0];
+            var newScript = document.createElement('script');
+            newScript.type = 'text/javascript';
+
+            var v = -1;
+            var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(navigator.userAgent) != null)
+            v = parseFloat( RegExp.$1 );
+            if (v > -1 && v < 9)
+                newScript.onreadystatechange = function () {
+                    if (this.readyState == 'complete') callback();
+                }
+            newScript.onload=callback;
+            newScript.src = scriptSrc;
+            headID.appendChild(newScript);
+        }
+
+        function connectToService() {
+            svcUrl += 'json';
+            Service = new PolderJSONService(svcUrl);
+        }
+
+        //svcUrl = "http://localhost:8099/";
+        svcUrl = "http://178.18.85.124:8099/";
+        connectToService();
+    }
+  </script>
+
+  </body>
+</html>
+
+

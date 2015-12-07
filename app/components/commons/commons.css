@@ -1,0 +1,34 @@
+/* BORDER RADIUS */
+/* OPACITY */
+/* BOX-SHADOW */
+/*GRADIENTS*/
+/* TRANSITIONS */
+/*TRANSFORMS*/
+/*ANIMATION*/
+/* TOGGLE */
+/* CHECKBOX */
+/* RADIO */
+.app-container {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+}
+.page-wrap {
+  padding-left: 250px;
+  height: 100%;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.page-wrap.open {
+  padding-left: 70px;
+}
+.page-wrap.hiddenPhone {
+  padding-left: 70px;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}

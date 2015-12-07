@@ -1,0 +1,50 @@
+<!--                                     -->
+<!-- Overzicht Lidsoorten                -->
+<!-- 20150816 onnodige div verwijderd    -->
+<!--                                     -->
+<h3>Overzicht LidSoorten</h3>
+<hr/>
+<div>
+  <a ui-sref="home"                class="btn btn-lg btn-success">Terug</a>
+  <a ui-sref="createSoortLid"      class="btn btn-lg btn-primary">Nieuw</a>
+  <!-- <button ng-click="clickGet()"  class="btn btn-lg btn-primary">Zoeken</button> -->
+  <!-- <button ng-click="clickCancel()" class="btn btn-lg btn-primary">Doe iets</button> -->
+  <!-- <button ng-click="delSoortLid()" class="btn btn-lg btn-primary">Verwijder</button> -->
+  <br><br>
+  <p>
+    Filter : <input type="text" size="10" height="28" ng-model="filter.soortlid" class="input" placeholder="SoortLid..."/>
+    <input type="text" size="10" ng-model="filter.omschrijving" class="input" placeholder="Omschrijving..." />
+    <button class="btn btn-lg btn-primary" ng-click="clearFilter();">Clear</button>
+  </p>
+  <!-- <p>
+    Display:
+    <label><input type="checkbox" ng-model="display.soortlidSoortLid" /> SoortLid </label>
+    <label><input type="checkbox" ng-model="display.soortlidOmschrijving" /> Omschrijving </label>
+  </p> -->
+  <div class="person-grid">
+    <scrollable-table watch="soortl" watch-cols="display">
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+           <!--  <th><center><input type="checkbox" ng-change="checkAll(selectedAll);" ng-model="selectedAll" ng-true-value="true" ng-false-value="false" /></center></th> -->
+            <th ng-if="display.soortlidSoortLid"><a href="javascript:void(0);" ng-click="clickSort('SoortLid', !reverse)">SoortLid</a></th>
+            <th ng-if="display.soortlidOmschrijving"><a href="javascript:void(0);" ng-click="clickSort('Omschrijving', !reverse)">Omschrijving</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- orderBy kan op meerdere velden -->
+          <tr ng-repeat="so in soortl | orderBy: mySort : reverse
+          | filter : { SoortLid: filter.soortlid, Omschrijving: filter.omschrijving } as numResults" ng-click="goViewSoortLid(so.SoortLid)">
+           <!-- <td style="width:100px"><center><input type="checkbox" ng-checked="selection.indexOf(so.soortlid) > -1" ng-click="toggleSelection(so.soortlid)" ng-model="selected" value="{{so.soortlid}}"  /></center></td> -->
+            <td ng-if="display.soortlidSoortLid">{{ so.SoortLid }}</td>
+            <td ng-if="display.soortlidOmschrijving">{{ so.Omschrijving }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </scrollable-table>
+  </div>
+  <div ng-if="numResults.length === 0">
+    <strong>Geen resultaten gevonden...</strong>
+  </div>
+</div>
+<hr/>
